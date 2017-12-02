@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import VotesContract from '../../../build/contracts/Votes.json';
+import { browserHistory } from 'react-router'
+import store from '../../store'
 
 class ItemInput extends Component{
   constructor(props) {
@@ -12,7 +15,14 @@ class ItemInput extends Component{
     this.setState({value: event.target.value});
   }
   handleSubmit(event) {
-    alert('Item:' + this.state.value);
+    console.info('Item:' + this.state.value);
+    let web3 = store.getState().web3.web3Instance
+    console.info(web3);
+    // Double-check web3's status.
+    if (typeof web3 !== 'undefined') {
+
+    }
+
     event.preventDefault();
   }
   render() {
