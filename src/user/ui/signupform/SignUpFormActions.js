@@ -7,8 +7,10 @@ const contract = require('truffle-contract')
 export function signUpUser(name) {
   let web3 = store.getState().web3.web3Instance
 
+
   // Double-check web3's status.
   if (typeof web3 !== 'undefined') {
+
 
     return function(dispatch) {
       // Using truffle-contract we create the authentication object.
@@ -35,7 +37,7 @@ export function signUpUser(name) {
             return dispatch(loginUser())
           })
           .catch(function(result) {
-            // If error...
+            console.error(result);
           })
         })
       })
