@@ -1,6 +1,6 @@
 pragma solidity ^0.4.2;
 
-contract Votes {
+contract Votes is Mortal {
   mapping (bytes32 => uint8) public votesReceived;
 
   bytes32[] public itemList;
